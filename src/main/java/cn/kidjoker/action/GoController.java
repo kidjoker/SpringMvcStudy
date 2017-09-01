@@ -20,7 +20,7 @@ public class GoController {
 	@RequestMapping(value="/index",method={RequestMethod.GET,RequestMethod.POST})
 	public String index(Model model) throws Exception {
 		model.addAttribute("ha","123");
-		return "index1";
+		return "index";
 	}
 	
 }
