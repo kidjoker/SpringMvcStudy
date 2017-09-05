@@ -3,6 +3,10 @@
  */
 package cn.kidjoker.action;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.context.EnvironmentAware;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,12 +19,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 @RequestMapping(value="/study")
-public class GoController {
+public class GoController implements EnvironmentAware {
+	
+	private Environment environment;
 	
 	@RequestMapping(value="/index",method={RequestMethod.GET,RequestMethod.POST})
-	public String index(Model model) throws Exception {
+	public String index(Model model,HttpServletRequest req) throws Exception {
+		req.getContextPath();
 		model.addAttribute("ha","123");
-		return "index1";
+		return "index";
+	}
+
+	
+	@Override
+	public void setEnvironment(Environment environment) {
+		this.environment = environment;
 	}
 	
 }
