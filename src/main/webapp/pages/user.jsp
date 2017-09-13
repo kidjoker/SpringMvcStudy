@@ -13,6 +13,7 @@
 		<form:errors path="*" />
 		<br />
 		用户名<form:input path="userName" />
+		<form:button type="submit" text="提交" />
 	</form:form>
 </body>
 </html>

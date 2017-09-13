@@ -18,7 +18,7 @@ public class UserValidator implements Validator{
 	public void validate(Object obj, Errors errors) {
 		User user = (User) obj;
 		if(user.getUserName().length() < 8) {
-			errors.rejectValue("userName", "valid.userNameLen", new Object[]{"用户名不能少于8位"}, null);
+			errors.rejectValue("userName", "201701", null, "用户名不能少于8位");
 		}
 	}
 
